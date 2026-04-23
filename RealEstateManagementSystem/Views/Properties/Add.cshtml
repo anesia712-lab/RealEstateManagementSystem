@@ -1,0 +1,38 @@
+﻿@model RealEstateManagementSystem.Models.Property
+
+<h2>➕ Add New Property</h2>
+
+<form method="post">
+    <div>
+        <label>Property Address:</label>
+        <input asp-for="Address" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Price ($):</label>
+        <input asp-for="Price" type="number" step="1000" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Bedrooms:</label>
+        <input asp-for="Bedrooms" type="number" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Bathrooms:</label>
+        <input asp-for="Bathrooms" type="number" step="0.5" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Square Feet:</label>
+        <input asp-for="SquareFeet" type="number" required />
+    </div>
+    <br />
+
+    <button type="submit">Save Property</button>
+    <a href="/Properties/Index">Cancel</a>
+</form>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1> Welcome to Skyline Realtor!</h1>
+
+@{
+    string isLoggedIn = Context.Session.GetString("IsLoggedIn");
+}
+
+@if (isLoggedIn == "true")
+{
+    <p>Welcome @Context.Session.GetString("UserEmail")!</p>
+
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="/Agents/Add">Add Agent</a></li>
+        <li><a href="/Agents/Index">View Agents</a></li>
+        <li><a href="/Clients/Add">Add Client</a></li>
+        <li><a href="/Clients/Index">View Clients</a></li>
+        <li><a href="/Properties/Add">Add Property</a></li>
+        <li><a href="/Properties/Index">View Properties</a></li>
+    </ul>
+
+    <a href="/Home/Logout">Logout</a>
+}
+else
+{
+    <p>Please <a href="/Home/Login">login</a> to continue.</p>
+}

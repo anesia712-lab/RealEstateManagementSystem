@@ -1,0 +1,43 @@
+﻿@model List<RealEstateManagementSystem.Models.Property>
+
+<h2>📋 All Properties</h2>
+
+<a href="/Properties/Add">➕ Add New Property</a>
+
+<table border="1" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+    <thead style="background-color: #f0f0f0;">
+        <tr>
+            <th>ID</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th>Bedrooms</th>
+            <th>Bathrooms</th>
+            <th>Sq Ft</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var property in Model)
+            {
+                <tr>
+                    <td>@property.Id</td>
+                    <td>@property.Address</td
+                    <td>$@property.Price.ToString("N0")</td
+                    <td>@property.Bedrooms</td
+                    <td>@property.Bathrooms</td
+                    <td>@property.SquareFeet</td
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" style="text-align: center;">No properties found. Add your first property!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<a href="/">← Back to Home</a>

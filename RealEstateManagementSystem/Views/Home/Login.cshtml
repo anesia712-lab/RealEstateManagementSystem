@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Skyline Realtor Login</h1>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p> 
+}
+
+<form method="post" action="/Home/Login">
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" required />
+    </div>
+    <br />
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" required />
+    </div>
+    <br />
+    <button type="submit">Login</button>
+</form>
+
+<p><strong>Demo:</strong> admin@realtor.com / 1234</p>

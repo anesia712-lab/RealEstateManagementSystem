@@ -1,0 +1,32 @@
+﻿@model RealEstateManagementSystem.Models.Agent
+
+<h2>➕ Add New Agent</h2>
+
+<form method="post">
+    <div>
+        <label>Full Name:</label>
+        <input asp-for="FullName" required />
+    </div>
+    <br />
+
+    <div>
+        <label>License Number:</label>
+        <input asp-for="LicenseNumber" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" type="email" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Phone Number:</label>
+        <input asp-for="PhoneNumber" required />
+    </div>
+    <br />
+
+    <button type="submit">Save Agent</button>
+    <a href="/Agents/Index">Cancel</a>
+</form>
