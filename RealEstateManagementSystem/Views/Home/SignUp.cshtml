@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<h1>Create New Account</h1>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}
+
+<form method="post">
+    <div>
+        <label>Full Name:</label>
+        <input type="text" name="fullName" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" required />
+    </div>
+    <br />
+
+    <div>
+        <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword" required />
+    </div>
+    <br />
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<br />
+<p>Already have an account? <a href="/Home/Login">Login here</a></p>

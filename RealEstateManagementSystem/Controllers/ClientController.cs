@@ -4,39 +4,30 @@ using RealEstateManagementSystem.Services;
 
 namespace RealEstateManagementSystem.Controllers
 {
-    public class ClientController : Controller
+    public class ClientsController : Controller
     {
-        [HttpGet]
         public IActionResult Add()
         {
-            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
-            {
-                return RedirectToAction("Login", "Home");
-            }
             return View();
         }
 
         [HttpPost]
         public IActionResult Add(Client client)
         {
-            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
+            if (client != null)
             {
-                return RedirectToAction("Login", "Home");
+                ClientService.Add(client);
             }
-
-            ClientService.Add(client);
+            // Redirect to Index page to see the list
             return RedirectToAction("Index");
         }
 
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
-            var client = ClientService.GetAll();
-            return View(client);
+            var clients = ClientService.GetAll();
+            return View(clients);
         }
     }
 }
+
+

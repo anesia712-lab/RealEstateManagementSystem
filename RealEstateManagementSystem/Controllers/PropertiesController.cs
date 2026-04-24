@@ -24,7 +24,12 @@ namespace RealEstateManagementSystem.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            PropertyService.Add(property);
+            if (property != null)
+            {
+                PropertyService.Add(property);
+            }
+
+            // Redirect to Index page to see the list
             return RedirectToAction("Index");
         }
 

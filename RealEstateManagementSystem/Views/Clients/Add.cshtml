@@ -1,6 +1,6 @@
 ﻿@model RealEstateManagementSystem.Models.Client
 
-<h2>➕ Add New Client</h2>
+<h2>Add New Client</h2>
 
 <form method="post">
     <div>
@@ -8,25 +8,20 @@
         <input asp-for="FullName" required />
     </div>
     <br />
-
     <div>
-        <label>Phone Number:</label>
+        <label>Phone:</label>
         <input asp-for="PhoneNumber" required />
     </div>
     <br />
-
     <div>
         <label>Email:</label>
-        <input asp-for="Email" type="email" required />
+        <input asp-for="Email" required />
     </div>
     <br />
-
     <div>
-        <label>Physical Address:</label>
+        <label>Address:</label>
         <input asp-for="Address" required />
     </div>
     <br />
-
     <button type="submit">Save Client</button>
-    <a href="/Clients/Index">Cancel</a>
 </form>

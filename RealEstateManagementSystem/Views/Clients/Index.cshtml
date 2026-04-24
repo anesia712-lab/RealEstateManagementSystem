@@ -1,0 +1,39 @@
+﻿@model List<RealEstateManagementSystem.Models.Client>
+
+<h2>All Clients</h2>
+
+<a href="/Clients/Add">Add New Client</a>
+
+@if (Model != null && Model.Any())
+{
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="padding: 10px; background: #667eea; color: white;">Full Name</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Phone Number</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Email</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in Model)
+            {
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@client.FullName</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@client.PhoneNumber</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@client.Email</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@client.Address</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No clients yet. Add your first client!</p>
+}
+
+
+
+
+ 

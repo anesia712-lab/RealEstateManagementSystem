@@ -1,43 +1,36 @@
 ﻿@model List<RealEstateManagementSystem.Models.Property>
 
-<h2>📋 All Properties</h2>
+<h2>All Properties</h2>
 
-<a href="/Properties/Add">➕ Add New Property</a>
+<a href="/Properties/Add">Add New Property</a>
 
-<table border="1" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
-    <thead style="background-color: #f0f0f0;">
-        <tr>
-            <th>ID</th>
-            <th>Address</th>
-            <th>Price</th>
-            <th>Bedrooms</th>
-            <th>Bathrooms</th>
-            <th>Sq Ft</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.Any())
-        {
-            foreach (var property in Model)
+@if (Model != null && Model.Any())
+{
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="padding: 10px; background: #667eea; color: white;">Address</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Price</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Bedrooms</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Bathrooms</th>
+                <th style="padding: 10px; background: #667eea; color: white;">Square Feet</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var property in Model)
             {
                 <tr>
-                    <td>@property.Id</td>
-                    <td>@property.Address</td
-                    <td>$@property.Price.ToString("N0")</td
-                    <td>@property.Bedrooms</td
-                    <td>@property.Bathrooms</td
-                    <td>@property.SquareFeet</td
+                    <td style="padding: 8px; border: 1px solid #ddd;">@property.Address</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">$@property.Price.ToString("N0")</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@property.Bedrooms</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@property.Bathrooms</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;">@property.SquareFeet</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="6" style="text-align: center;">No properties found. Add your first property!</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<br />
-<a href="/">← Back to Home</a>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No properties yet. Add your first property!</p>
+}
