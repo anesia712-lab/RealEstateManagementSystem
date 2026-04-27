@@ -9,6 +9,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
+    <!-- Add SQL Server client package so Microsoft.Data.SqlClient and related types are available -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+      <!-- BCrypt for verifying password hashes stored in the Users table -->
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>

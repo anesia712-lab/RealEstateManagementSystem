@@ -1,0 +1,25 @@
+@model RealEstateManagementSystem.Models.Property
+
+<h2>Property Details</h2>
+
+<div>
+    <strong>ID:</strong> @Model.Id
+</div>
+<div>
+    <strong>Address:</strong> @Model.Address
+</div>
+<div>
+    <strong>Price:</strong> $@Model.Price.ToString("N0")
+</div>
+<div>
+    <strong>Bedrooms:</strong> @Model.Bedrooms
+</div>
+<div>
+    <strong>Bathrooms:</strong> @Model.Bathrooms
+</div>
+<div>
+    <strong>Square Feet:</strong> @Model.SquareFeet
+</div>
+
+<br />
+<a href="/Properties/Index">← Back to Properties</a>

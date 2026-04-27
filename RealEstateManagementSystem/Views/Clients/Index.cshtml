@@ -1,4 +1,4 @@
-﻿@model List<RealEstateManagementSystem.Models.Client>
+@model List<RealEstateManagementSystem.Models.Client>
 
 <h2>All Clients</h2>
 
@@ -19,7 +19,7 @@
             @foreach (var client in Model)
             {
                 <tr>
-                    <td style="padding: 8px; border: 1px solid #ddd;">@client.FullName</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;"><a href="/Clients/Details/@client.Id">@client.FullName</a></td>
                     <td style="padding: 8px; border: 1px solid #ddd;">@client.PhoneNumber</td>
                     <td style="padding: 8px; border: 1px solid #ddd;">@client.Email</td>
                     <td style="padding: 8px; border: 1px solid #ddd;">@client.Address</td>

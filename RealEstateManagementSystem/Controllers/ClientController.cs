@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using RealEstateManagementSystem.Models;
 using RealEstateManagementSystem.Services;
 
@@ -6,6 +6,13 @@ namespace RealEstateManagementSystem.Controllers
 {
     public class ClientsController : Controller
     {
+        private readonly ClientService _clientService;
+
+        public ClientsController(ClientService clientService)
+        {
+            _clientService = clientService;
+        }
+
         public IActionResult Add()
         {
             return View();
@@ -16,7 +23,7 @@ namespace RealEstateManagementSystem.Controllers
         {
             if (client != null)
             {
-                ClientService.Add(client);
+                _clientService.Add(client);
             }
             // Redirect to Index page to see the list
             return RedirectToAction("Index");
@@ -24,8 +31,19 @@ namespace RealEstateManagementSystem.Controllers
 
         public IActionResult Index()
         {
-            var clients = ClientService.GetAll();
+            var clients = _clientService.GetAll();
             return View(clients);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var client = _clientService.GetById(id);
+            if (client == null)
+            {
+                return NotFound();
+            }
+
+            return View(client);
         }
     }
 }

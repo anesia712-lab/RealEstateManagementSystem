@@ -3,6 +3,9 @@
 <h2>➕ Add New Agent</h2>
 
 <form method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" style="color:red"></div>
+
     <div>
         <label>Full Name:</label>
         <input asp-for="FullName" required />
@@ -11,19 +14,19 @@
 
     <div>
         <label>License Number:</label>
-        <input asp-for="LicenseNumber" required />
+        <input asp-for="LicenseNumber" />
     </div>
     <br />
 
     <div>
         <label>Email:</label>
-        <input asp-for="Email" type="email" required />
+        <input asp-for="Email" type="email" />
     </div>
     <br />
 
     <div>
         <label>Phone Number:</label>
-        <input asp-for="PhoneNumber" required />
+        <input asp-for="PhoneNumber" />
     </div>
     <br />
 

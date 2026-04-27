@@ -2,7 +2,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
-
+builder.Services.AddScoped<RealEstateManagementSystem.Services.AgentService>();
+builder.Services.AddScoped<RealEstateManagementSystem.Services.ClientService>();
+builder.Services.AddScoped<RealEstateManagementSystem.Services.PropertyService>();
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())

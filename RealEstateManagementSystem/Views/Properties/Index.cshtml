@@ -1,4 +1,4 @@
-﻿@model List<RealEstateManagementSystem.Models.Property>
+@model List<RealEstateManagementSystem.Models.Property>
 
 <h2>All Properties</h2>
 
@@ -20,7 +20,7 @@
             @foreach (var property in Model)
             {
                 <tr>
-                    <td style="padding: 8px; border: 1px solid #ddd;">@property.Address</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;"><a href="/Properties/Details/@property.Id">@property.Address</a></td>
                     <td style="padding: 8px; border: 1px solid #ddd;">$@property.Price.ToString("N0")</td>
                     <td style="padding: 8px; border: 1px solid #ddd;">@property.Bedrooms</td>
                     <td style="padding: 8px; border: 1px solid #ddd;">@property.Bathrooms</td>
