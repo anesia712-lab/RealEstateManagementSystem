@@ -19,4 +19,16 @@
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="DesktopApp\**" />
+    <Content Remove="DesktopApp\**" />
+    <EmbeddedResource Remove="DesktopApp\**" />
+    <None Remove="DesktopApp\**" />
+    
+    <Compile Remove="Module2_ClassLibrary\**" />
+    <Content Remove="Module2_ClassLibrary\**" />
+    <EmbeddedResource Remove="Module2_ClassLibrary\**" />
+    <None Remove="Module2_ClassLibrary\**" />
+  </ItemGroup>
+
 </Project>
