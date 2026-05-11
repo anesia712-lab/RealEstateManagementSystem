@@ -63,7 +63,7 @@ namespace DesktopApp
 
             // Temp hardcode for module 1 fallback + module 4 database requirement
             // I'll try checking against the Database. If connection fails, fallback to hardcoded admin.
-            string connStr = "Data Source=KHRISEAN;Initial Catalog=RealEstateDB;Integrated Security=True;TrustServerCertificate=True;";
+            string connStr = "Server=localhost,1433;Initial Catalog=RealEstateDB;User Id=sa;Password=RealEstate_local_1;Encrypt=True;TrustServerCertificate=True;";
             bool isAuthenticated = false;
 
             try

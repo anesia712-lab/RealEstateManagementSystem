@@ -21,7 +21,7 @@ namespace RealEstateManagementSystem.Services
             var properties = new List<Property>();
             using (var connection = new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("SELECT Id, Address, Price, Bedrooms, Bathrooms FROM Properties", connection);
+                var command = new SqlCommand("SELECT Id, Address, Price, Bedrooms, Bathrooms, SquareFeet FROM Properties", connection);
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
@@ -33,7 +33,8 @@ namespace RealEstateManagementSystem.Services
                             Address = reader.IsDBNull(1) ? null : reader.GetString(1),
                             Price = reader.GetDecimal(2),
                             Bedrooms = reader.GetInt32(3),
-                            Bathrooms = reader.GetInt32(4)
+                            Bathrooms = reader.GetInt32(4),
+                            SquareFeet = reader.IsDBNull(5) ? 0 : reader.GetInt32(5)
                         });
                     }
                 }
@@ -45,11 +46,12 @@ namespace RealEstateManagementSystem.Services
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("INSERT INTO Properties (Address, Price, Bedrooms, Bathrooms) VALUES (@Address, @Price, @Bedrooms, @Bathrooms)", connection);
+                var command = new SqlCommand("INSERT INTO Properties (Address, Price, Bedrooms, Bathrooms, SquareFeet) VALUES (@Address, @Price, @Bedrooms, @Bathrooms, @SquareFeet)", connection);
                 command.Parameters.AddWithValue("@Address", (object)property.Address ?? DBNull.Value);
                 command.Parameters.AddWithValue("@Price", property.Price);
                 command.Parameters.AddWithValue("@Bedrooms", property.Bedrooms);
                 command.Parameters.AddWithValue("@Bathrooms", property.Bathrooms);
+                command.Parameters.AddWithValue("@SquareFeet", property.SquareFeet);
                 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -61,7 +63,7 @@ namespace RealEstateManagementSystem.Services
             Property property = null;
             using (var connection = new SqlConnection(_connectionString))
             {
-                var command = new SqlCommand("SELECT Id, Address, Price, Bedrooms, Bathrooms FROM Properties WHERE Id = @Id", connection);
+                var command = new SqlCommand("SELECT Id, Address, Price, Bedrooms, Bathrooms, SquareFeet FROM Properties WHERE Id = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 connection.Open();
                 using (var reader = command.ExecuteReader())
@@ -74,7 +76,8 @@ namespace RealEstateManagementSystem.Services
                             Address = reader.IsDBNull(1) ? null : reader.GetString(1),
                             Price = reader.GetDecimal(2),
                             Bedrooms = reader.GetInt32(3),
-                            Bathrooms = reader.GetInt32(4)
+                            Bathrooms = reader.GetInt32(4),
+                            SquareFeet = reader.IsDBNull(5) ? 0 : reader.GetInt32(5)
                         };
                     }
                 }

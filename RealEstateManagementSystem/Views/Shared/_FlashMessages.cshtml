@@ -1,0 +1,20 @@
+@{
+    var success = TempData["SuccessMessage"] as string;
+    var error = TempData["ErrorMessage"] as string ?? ViewBag.Error?.ToString();
+    var info = TempData["InfoMessage"] as string;
+}
+
+@if (!string.IsNullOrWhiteSpace(success))
+{
+    <div class="app-alert app-alert-success" role="status">@success</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(error))
+{
+    <div class="app-alert app-alert-error" role="alert">@error</div>
+}
+
+@if (!string.IsNullOrWhiteSpace(info))
+{
+    <div class="app-alert app-alert-info" role="status">@info</div>
+}

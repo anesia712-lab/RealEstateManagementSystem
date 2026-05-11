@@ -1,35 +1,43 @@
 ﻿@model RealEstateManagementSystem.Models.Agent
 
+@{
+    ViewData["Title"] = "Add Agent";
+}
+
 <h2>➕ Add New Agent</h2>
 
-<form method="post">
-    @Html.AntiForgeryToken()
-    <div asp-validation-summary="ModelOnly" style="color:red"></div>
+<form asp-controller="Agents" asp-action="Add" method="post">
+    <div asp-validation-summary="All" class="validation-summary-all" role="alert"></div>
 
-    <div>
-        <label>Full Name:</label>
-        <input asp-for="FullName" required />
+    <div class="form-field">
+        <label asp-for="FullName">Full Name</label>
+        <input asp-for="FullName" required autocomplete="name" />
+        <span asp-validation-for="FullName" class="field-validation-error"></span>
     </div>
-    <br />
 
-    <div>
-        <label>License Number:</label>
-        <input asp-for="LicenseNumber" />
+    <div class="form-field">
+        <label asp-for="LicenseNumber">License Number</label>
+        <input asp-for="LicenseNumber" required placeholder="e.g. RE-12345" />
+        <span asp-validation-for="LicenseNumber" class="field-validation-error"></span>
     </div>
-    <br />
 
-    <div>
-        <label>Email:</label>
-        <input asp-for="Email" type="email" />
+    <div class="form-field">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="email" required autocomplete="email" />
+        <span asp-validation-for="Email" class="field-validation-error"></span>
     </div>
-    <br />
 
-    <div>
-        <label>Phone Number:</label>
-        <input asp-for="PhoneNumber" />
+    <div class="form-field">
+        <label asp-for="PhoneNumber">Phone</label>
+        <input asp-for="PhoneNumber" required placeholder="555-123-4567" autocomplete="tel" />
+        <small class="hint">Format: 555-123-4567 (area code, number)</small>
+        <span asp-validation-for="PhoneNumber" class="field-validation-error"></span>
     </div>
-    <br />
 
     <button type="submit">Save Agent</button>
     <a href="/Agents/Index">Cancel</a>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,20 @@
+@model RealEstateManagementSystem.Models.ErrorViewModel
+@{
+    ViewData["Title"] = ViewBag.PageTitle ?? "Unavailable";
+}
+
+<div class="page-error">
+    <h1>@(ViewBag.PageTitle ?? "Notice")</h1>
+    <p class="lead">@Model.UserMessage</p>
+
+    @if (Model.ShowRequestId)
+    {
+        <p class="error-ref">Reference: <strong><code>@Model.RequestId</code></strong></p>
+    }
+
+    <p class="error-actions">
+        <a href="/" class="btn-link">Return to home</a>
+        <span> · </span>
+        <a href="javascript:history.back()" class="btn-link">Go back</a>
+    </p>
+</div>

@@ -16,7 +16,7 @@ namespace DesktopApp
         private Button btnClear;
         private Button btnExit;
         private DataGridView dgvClients;
-        private string connStr = "Data Source=KHRISEAN;Initial Catalog=RealEstateDB;Integrated Security=True;TrustServerCertificate=True;";
+        private string connStr = "Server=localhost,1433;Initial Catalog=RealEstateDB;User Id=sa;Password=RealEstate_local_1;Encrypt=True;TrustServerCertificate=True;";
 
         public ClientForm()
         {

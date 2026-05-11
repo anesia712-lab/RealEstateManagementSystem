@@ -5,6 +5,12 @@ VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstateManagementSystem", "RealEstateManagementSystem\RealEstateManagementSystem.csproj", "{AE1849D7-06D7-4D14-A1E4-3C656E750784}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealEstateManagementSystem", "RealEstateManagementSystem", "{1707C9F2-6792-4202-A3B0-779FC2253E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApp", "RealEstateManagementSystem\DesktopApp\DesktopApp.csproj", "{26CC3D5E-89F5-4069-9499-CB58B357A25A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module2_ClassLibrary", "RealEstateManagementSystem\Module2_ClassLibrary\Module2_ClassLibrary.csproj", "{7D28DC8E-B355-4DD0-B464-E8CE8F055E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,21 @@ Global
 		{AE1849D7-06D7-4D14-A1E4-3C656E750784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1849D7-06D7-4D14-A1E4-3C656E750784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE1849D7-06D7-4D14-A1E4-3C656E750784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26CC3D5E-89F5-4069-9499-CB58B357A25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26CC3D5E-89F5-4069-9499-CB58B357A25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26CC3D5E-89F5-4069-9499-CB58B357A25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26CC3D5E-89F5-4069-9499-CB58B357A25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D28DC8E-B355-4DD0-B464-E8CE8F055E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D28DC8E-B355-4DD0-B464-E8CE8F055E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D28DC8E-B355-4DD0-B464-E8CE8F055E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D28DC8E-B355-4DD0-B464-E8CE8F055E40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE1849D7-06D7-4D14-A1E4-3C656E750784} = {1707C9F2-6792-4202-A3B0-779FC2253E4E}
+		{26CC3D5E-89F5-4069-9499-CB58B357A25A} = {1707C9F2-6792-4202-A3B0-779FC2253E4E}
+		{7D28DC8E-B355-4DD0-B464-E8CE8F055E40} = {1707C9F2-6792-4202-A3B0-779FC2253E4E}
 	EndGlobalSection
 EndGlobal

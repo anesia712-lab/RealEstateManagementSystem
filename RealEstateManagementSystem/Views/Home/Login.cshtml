@@ -4,27 +4,18 @@
 
 <h1>Skyline Realtor Login</h1>
 
-@if (ViewBag.Error != null)
-{
-    <p style="color:red;">@ViewBag.Error</p> 
-}
-
-<form method="post" action="/Home/Login">
-    <div>
-        <label>Email:</label>
-        <input type="email" name="email" required />
+<form asp-action="Login" asp-controller="Home" method="post">
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required autocomplete="username" aria-describedby="login-hint" />
     </div>
-    <br />
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password" required />
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required autocomplete="current-password" />
     </div>
-    <br />
-    <button type="submit">Login</button>
+    <button type="submit">Sign in</button>
 </form>
 
-<p><strong>Demo:</strong> admin@realtor.com / 1234</p>
+<p id="login-hint" class="hint"><small>Demo (if seeded): admin@realtor.com / 1234</small></p>
 
-<p>Don't have an account? <a href="/Home/SignUp">Sign Up here</a></p>
-
-
+<p>Don't have an account? <a href="/Home/SignUp">Create an account</a></p>

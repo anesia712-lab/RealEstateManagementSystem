@@ -1,27 +1,43 @@
 ﻿@model RealEstateManagementSystem.Models.Client
 
+@{
+    ViewData["Title"] = "Add Client";
+}
+
 <h2>Add New Client</h2>
 
-<form method="post">
-    <div>
-        <label>Full Name:</label>
-        <input asp-for="FullName" required />
+<form asp-controller="Clients" asp-action="Add" method="post">
+    <div asp-validation-summary="All" class="validation-summary-all" role="alert"></div>
+
+    <div class="form-field">
+        <label asp-for="FullName">Full Name</label>
+        <input asp-for="FullName" required autocomplete="name" />
+        <span asp-validation-for="FullName" class="field-validation-error"></span>
     </div>
-    <br />
-    <div>
-        <label>Phone:</label>
-        <input asp-for="PhoneNumber" required />
+
+    <div class="form-field">
+        <label asp-for="PhoneNumber">Phone</label>
+        <input asp-for="PhoneNumber" required placeholder="555-123-4567" autocomplete="tel" />
+        <small class="hint">Format: 555-123-4567</small>
+        <span asp-validation-for="PhoneNumber" class="field-validation-error"></span>
     </div>
-    <br />
-    <div>
-        <label>Email:</label>
-        <input asp-for="Email" required />
+
+    <div class="form-field">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="email" required autocomplete="email" />
+        <span asp-validation-for="Email" class="field-validation-error"></span>
     </div>
-    <br />
-    <div>
-        <label>Address:</label>
-        <input asp-for="Address" required />
+
+    <div class="form-field">
+        <label asp-for="Address">Address</label>
+        <input asp-for="Address" required autocomplete="street-address" />
+        <span asp-validation-for="Address" class="field-validation-error"></span>
     </div>
-    <br />
+
     <button type="submit">Save Client</button>
+    <a href="/Clients/Index">Cancel</a>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
